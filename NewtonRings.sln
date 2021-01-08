@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewtonRings", "NewtonRings\NewtonRings.csproj", "{DF440D78-9E82-47F4-BC4C-AB0CD4F39F1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{753D5EC3-0278-463E-BF7F-DB17A9CFC35C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{2614CD10-27DE-4CDE-A5E9-1B9D27553626}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF440D78-9E82-47F4-BC4C-AB0CD4F39F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF440D78-9E82-47F4-BC4C-AB0CD4F39F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF440D78-9E82-47F4-BC4C-AB0CD4F39F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF440D78-9E82-47F4-BC4C-AB0CD4F39F1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753D5EC3-0278-463E-BF7F-DB17A9CFC35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753D5EC3-0278-463E-BF7F-DB17A9CFC35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753D5EC3-0278-463E-BF7F-DB17A9CFC35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753D5EC3-0278-463E-BF7F-DB17A9CFC35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2614CD10-27DE-4CDE-A5E9-1B9D27553626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2614CD10-27DE-4CDE-A5E9-1B9D27553626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2614CD10-27DE-4CDE-A5E9-1B9D27553626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2614CD10-27DE-4CDE-A5E9-1B9D27553626}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

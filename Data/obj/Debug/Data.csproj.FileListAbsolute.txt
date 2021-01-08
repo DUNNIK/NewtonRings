@@ -1,0 +1,8 @@
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\bin\Debug\Data.exe
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\bin\Debug\Data.pdb
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\bin\Debug\TinyCsvParser.dll
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\obj\Debug\Data.exe
+C:\Users\NIKITOS\RiderProjects\NewtonRings\Data\obj\Debug\Data.pdb

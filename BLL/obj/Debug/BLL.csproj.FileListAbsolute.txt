@@ -1,0 +1,10 @@
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\bin\Debug\BLL.exe
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\bin\Debug\BLL.pdb
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\bin\Debug\Data.exe
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\bin\Debug\TinyCsvParser.dll
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\bin\Debug\Data.pdb
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\obj\Debug\BLL.exe
+C:\Users\NIKITOS\RiderProjects\NewtonRings\BLL\obj\Debug\BLL.pdb
