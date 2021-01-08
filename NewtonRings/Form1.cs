@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using BLL;
 using BLL.Csv;
-using Data;
 using NewtonRings.Exceptions;
+using Point = Data.Point;
 
 namespace NewtonRings
 {
@@ -176,7 +178,7 @@ namespace NewtonRings
                                 double.Parse(textBox1.Text)));
                         vExperimental = VisibilityFunctionMethods.FindVExperimental(
                             DataHandler.FindMaxInAllData(DataController.GetFourthPoints()),
-                            DataHandler.FindMinInAllData(DataController.GetFourthPoints()));
+                            DataHandler.FindMinInAllData(DataController.GetThirdPoints()));
                         vTheoretical = VisibilityFunctionMethods.FindVTheoretical(
                             opticalPathDifference,
                             VisibilityFunctionMethods.FindL(opticalPathDifference),
@@ -350,6 +352,46 @@ namespace NewtonRings
                 return;
             }
             e.Handled = true;
+        }
+
+        private void chart_GetToolTipText(object sender, ToolTipEventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(e.Text))
+                return;
+
+            Console.WriteLine(e.HitTestResult.ChartElementType);
+
+            switch (e.HitTestResult.ChartElementType)
+            {
+                case ChartElementType.DataPoint:
+                case ChartElementType.DataPointLabel:
+                case ChartElementType.Gridlines:
+                case ChartElementType.Axis:
+                case ChartElementType.TickMarks:
+                case ChartElementType.PlottingArea:
+                    var area = chart1.ChartAreas[0];
+
+                    var areaPosition = area.Position;
+
+                    var areaRect = new RectangleF(areaPosition.X * chart1.Width / 100,
+                        areaPosition.Y * chart1.Height / 100,
+                        areaPosition.Width * chart1.Width / 100, areaPosition.Height * chart1.Height / 100);
+
+                    var innerPlot = area.InnerPlotPosition;
+
+                    double x = area.AxisX.Minimum +
+                               (area.AxisX.Maximum - area.AxisX.Minimum) *
+                               (e.X - areaRect.Left - innerPlot.X * areaRect.Width / 100) /
+                               (innerPlot.Width * areaRect.Width / 100);
+                    double y = area.AxisY.Maximum -
+                               (area.AxisY.Maximum - area.AxisY.Minimum) *
+                               (e.Y - areaRect.Top - innerPlot.Y * areaRect.Height / 100) /
+                               (innerPlot.Height * areaRect.Height / 100);
+
+                    Console.WriteLine($@"{x:F2} {y:F2}");
+                    e.Text = $"{x:F2} {y:F2}";
+                    break;
+            }
         }
     }
 }

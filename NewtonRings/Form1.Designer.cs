@@ -1,4 +1,6 @@
-﻿namespace NewtonRings
+﻿using System.Windows.Forms;
+
+namespace NewtonRings
 {
     partial class Form1
     {
@@ -6,7 +8,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -130,6 +131,9 @@
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             this.chart1.UseWaitCursor = true;
+            chart1.Series[0].ToolTip = "X = #VALX, Y = #VALY";
+            chart1.Series[1].ToolTip = "X = #VALX, Y = #VALY";
+            chart1.GetToolTipText += chart_GetToolTipText;
             // 
             // button5
             // 
@@ -345,6 +349,7 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Newton Rings";
@@ -392,7 +397,6 @@
         private System.Windows.Forms.Button button2;
 
         private System.Windows.Forms.Button button1;
-
         #endregion
     }
 }

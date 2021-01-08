@@ -5,7 +5,7 @@ using TinyCsvParser.Mapping;
 
 namespace BLL.Csv
 {
-    public class CsvConverter
+    public static class CsvConverter
     {
         public static List<Point> ConvertDataToPoints(IEnumerable<CsvMappingResult<RingsData>> data)
         {
