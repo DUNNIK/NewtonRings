@@ -131,8 +131,6 @@ namespace NewtonRings
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
             this.chart1.UseWaitCursor = true;
-            chart1.Series[0].ToolTip = "X = #VALX, Y = #VALY";
-            chart1.Series[1].ToolTip = "X = #VALX, Y = #VALY";
             chart1.GetToolTipText += chart_GetToolTipText;
             // 
             // button5

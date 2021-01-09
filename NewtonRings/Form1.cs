@@ -178,7 +178,7 @@ namespace NewtonRings
                                 double.Parse(textBox1.Text)));
                         vExperimental = VisibilityFunctionMethods.FindVExperimental(
                             DataHandler.FindMaxInAllData(DataController.GetFourthPoints()),
-                            DataHandler.FindMinInAllData(DataController.GetThirdPoints()));
+                            DataHandler.FindMinInAllData(DataController.GetFourthPoints()));
                         vTheoretical = VisibilityFunctionMethods.FindVTheoretical(
                             opticalPathDifference,
                             VisibilityFunctionMethods.FindL(opticalPathDifference),
