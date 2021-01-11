@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using BLL.Exceptions;
 using Data;
+using Emgu.CV;
+using Emgu.CV.Structure;
 using TinyCsvParser.Mapping;
 
 namespace BLL
@@ -79,6 +81,33 @@ namespace BLL
         {
             if (ObtainedData.FourthPoints == null) throw new DataAccessException();
             return ObtainedData.FourthPoints;
+        }
+
+        public static void AddInputImage(Image<Bgr, byte> inputImage)
+        {
+            ImageData.InputImage = inputImage;
+            ImageData.CloneForContour(inputImage);
+        }
+
+        public static Image<Bgr, byte> GetInputImage()
+        {
+            return ImageData.InputImage;
+        }
+        public static Image<Bgr, byte> GetImageWithContour()
+        {
+            return ImageData.ImageForContour;
+        }
+        public static void AddGrayImage(Image<Gray, byte> grayImage)
+        {
+            ImageData.GrayImage = grayImage;
+        }
+        public static Image<Gray, byte> GetGrayImageWithoutEffect()
+        {
+            return ImageData.GrayWithoutEffect;
+        }
+        public static Image<Gray, byte> GetGrayImage()
+        {
+            return ImageData.GrayImage;
         }
     }
 }

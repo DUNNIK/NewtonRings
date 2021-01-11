@@ -10,6 +10,7 @@ namespace BLL
         public static List<Point> FindMaxInAllData(List<Point> points)
         {
             var result = new List<Point>();
+            SortPointsByX(points);
             for (var i = 1; i < points.Count - 1; i++)
             {
                 var previous = points[i - 1];
@@ -20,12 +21,13 @@ namespace BLL
                     result.Add(current);
                 }
             }
-
+            SortPointsByX(result);
             return result;
         }
         public static List<Point> FindMinInAllData(List<Point> points)
         {
             var result = new List<Point>();
+            SortPointsByX(points);
             for (var i = 1; i < points.Count - 1; i++)
             {
                 var previous = points[i - 1];
@@ -36,14 +38,14 @@ namespace BLL
                     result.Add(current);
                 }
             }
-
+            SortPointsByX(result);
             return result;
         }
 
         public static List<Point> LinePointsInRadiusDependence(IEnumerable<Point> max, IEnumerable<Point> min)
         {
             var union = max.Union(min).ToList();
-            var compare = new PointComparerByR();
+            var compare = new PointComparerByX();
             union.Sort(compare);
 
             return union.Select((t, i) => new Point(i, t.X * t.X)).ToList();
@@ -52,6 +54,13 @@ namespace BLL
         public static double FindRByN(List<Point> maxOrMin, double lambda)
         {
             return (maxOrMin[2].X * maxOrMin[2].X - maxOrMin[0].X * maxOrMin[0].X) / (2 * lambda) * 1000;
+        }
+
+        public static List<Point> SortPointsByX(List<Point> points)
+        {
+            var compare = new PointComparerByX();
+            points.Sort(compare);
+            return points;
         }
     }
 }

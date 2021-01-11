@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Emgu.CV;
 
 namespace Data
 {
@@ -12,9 +13,8 @@ namespace Data
             X = x;
             Y = y;
         }
-            
     }
-    public class PointComparerByI : IComparer<Point>
+    public class PointComparerByY : IComparer<Point>
     {
         public int Compare(Point point1, Point point2)
         {
@@ -30,7 +30,7 @@ namespace Data
             return 0;
         }
     }
-    public class PointComparerByR : IComparer<Point>
+    public class PointComparerByX : IComparer<Point>
     {
         public int Compare(Point point1, Point point2)
         {
@@ -44,6 +44,28 @@ namespace Data
             }
  
             return 0;
+        }
+    }
+
+    public class Points : List<Point>
+    {
+        public Points(List<Point> points)
+        {
+            for (int i = 0; i < points.Count; i++)
+            {
+                Add(points[i]);
+            }
+        }
+        public System.Drawing.Point[] ConvertToDrawingPoints()
+        {
+            var result = new System.Drawing.Point[this.Count];
+            for (int i = 0; i < Count; i++)
+            {
+                result[i].X = (int)this[i].X;
+                result[i].Y = (int)this[i].Y;
+            }
+
+            return result;
         }
     }
 }

@@ -8,14 +8,28 @@ namespace BLL
 {
     public static class VisibilityFunctionMethods
     {
-        public static List<double> FindRAverage(IEnumerable<Point> max, List<Point> min)
+        public static List<double> FindRAverage(List<Point> max, List<Point> min)
         {
-            return max.Select((t, i) => t.X + min[i].X).ToList();
+            if (max.Count < min.Count)
+            {
+                return max.Select((t, i) => t.X + min[i].X).ToList();
+            }
+            else
+            {
+                return min.Select((t, i) => t.X + max[i].Y).ToList();
+            }
         }
 
-        public static List<double> FindVExperimental(IEnumerable<Point> max, List<Point> min)
+        public static List<double> FindVExperimental(List<Point> max, List<Point> min)
         {
-            return max.Select((t, i) => (t.Y - min[i].Y) / (t.Y + min[i].Y)).ToList();
+            if (max.Count < min.Count)
+            {
+                return max.Select((t, i) => (t.Y - min[i].Y) / (t.Y + min[i].Y)).ToList();
+            }
+            else
+            {
+                return min.Select((t, i) => (t.Y - max[i].Y) / (t.Y + max[i].Y)).ToList();
+            }
         }
 
         public static List<double> OpticalPathDifference(IEnumerable<double> rAverage, double r)
