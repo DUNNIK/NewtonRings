@@ -34,6 +34,8 @@ namespace NewtonRings
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -66,11 +68,29 @@ namespace NewtonRings
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(3, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 23);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Исходная картинка";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(626, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(245, 23);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Картинка с найденным кольцом";
+            // 
             // PicturesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 642);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -81,6 +101,10 @@ namespace NewtonRings
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.RichTextBox richTextBox1;
 
